@@ -1,5 +1,7 @@
 import java.util.Comparator;
 
+//this class sorts students based on their period utilizing Collections.sort()
+
 public class PeriodComparator implements Comparator<Student>
 	{
 
