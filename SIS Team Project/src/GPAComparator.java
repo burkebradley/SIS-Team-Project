@@ -1,5 +1,7 @@
 import java.util.Comparator;
 
+//class that sorts students based on GPA using Collections.sort()
+
 public class GPAComparator implements Comparator<Student>
 	{
 

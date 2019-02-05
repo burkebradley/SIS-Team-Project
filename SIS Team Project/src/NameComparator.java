@@ -1,5 +1,7 @@
 import java.util.Comparator;
 
+//this class allows students to be sorted based on last name using Collections.sort()
+
 public class NameComparator implements Comparator<Student>
 	{
 

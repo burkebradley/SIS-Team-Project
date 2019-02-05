@@ -18,14 +18,15 @@ public class ReadFile
 			
 			while((line = br.readLine()) != null) 
 		 	{
+		 	//takes entire line and puts it into an array
 		    String[] student = line.split(" ");
 		    Runner.directory.add(new Student((student[0]+" "+student[1]), 0, new ArrayList<Course>()));
 		    
 		    for(int i=0; i<3; i++)
 		    	{
-		    	
+		    	    //takes data from the array and creates student objects
 		    		Runner.directory.get(counter).getClasses().add(new Course(student[counter2], student[counter2+1], counter3+1));
-		    		counter2++;
+		    		counter2+=2;
 		    		counter3++;
 		    		
 		    	}
