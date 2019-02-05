@@ -6,8 +6,10 @@ import java.util.Scanner;
 
 public class Runner
 	{
+
 		static int periodChoice = 0;
 		static Scanner userInput = new Scanner(System.in);
+
 		static ArrayList<Student> directory = new ArrayList<Student>();
 		
 		public static void main(String[] args)
@@ -15,6 +17,7 @@ public class Runner
 				ReadFile.readFile();
 				sortStudents();
 			}
+
 		
 		public static void sortStudents()
 		{
