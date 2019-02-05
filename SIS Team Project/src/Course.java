@@ -1,8 +1,7 @@
 
 public class Course
 	{
-		private String name;
-		private String grade;
+		private String name, grade;
 		private int period;
 		
 		public Course(String n, String g, int p)
