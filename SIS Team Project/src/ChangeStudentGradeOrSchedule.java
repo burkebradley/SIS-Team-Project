@@ -80,7 +80,7 @@ public class ChangeStudentGradeOrSchedule
 					}
 				while(realGradeEntered = false);
 				directory.get(userSelection).getClasses().get(userClassSelection).setGrade(userGradeInput);
-				System.out.println(directory.get(userSelection).getName() + directory.get(userSelection).getClasses().get(userClassSelection).getName() + " " + directory.get(userSelection).getClasses().get(userClassSelection).getGrade());
+				System.out.println(directory.get(userSelection).getName() + " " + directory.get(userSelection).getClasses().get(userClassSelection).getName() + " " + directory.get(userSelection).getClasses().get(userClassSelection).getGrade());
 			}
 		public static void changeStudentSchedule()
 			{
