@@ -80,10 +80,40 @@ public class ChangeStudentGradeOrSchedule
 					}
 				while(realGradeEntered = false);
 				directory.get(userSelection).getClasses().get(userClassSelection).setGrade(userGradeInput);
-				System.out.println(directory.get(userSelection).getName() + " " + directory.get(userSelection).getClasses().get(userClassSelection).getName() + " " + directory.get(userSelection).getClasses().get(userClassSelection).getGrade());
+				System.out.println(directory.get(userSelection).getName() + " " + directory.get(userSelection).getClasses().get(userClassSelection).getName() + " " + directory.get(userSelection).getClasses().get(userClassSelection).getGrade() + " " + directory.get(userSelection).getClasses().get(userClassSelection).getPeriod());
 			}
 		public static void changeStudentSchedule()
 			{
-				
+				int userSelection;
+				int userClassSelection;
+				String className;
+				String classGrade;
+				do
+					{
+						System.out.println("Select a student:");
+						for(int i = 0; i < directory.size(); i++)
+							{
+								System.out.println("(" + (i + 1)  + ") " + directory.get(i).getName());
+							}
+						userSelection = userInput.nextInt() - 1;
+					}
+				while(userSelection < 0 || userSelection > directory.size());
+				System.out.println();
+				do
+					{
+						System.out.println("Select a class you want to replace.");
+						System.out.println("(1)" + directory.get(userSelection).getClasses().get(0).getName() + " " + directory.get(userSelection).getClasses().get(0).getGrade() + " "  + directory.get(userSelection).getClasses().get(0).getPeriod());
+						System.out.println("(2)" + directory.get(userSelection).getClasses().get(1).getName() + " " + directory.get(userSelection).getClasses().get(1).getGrade() + " " + directory.get(userSelection).getClasses().get(1).getPeriod());
+						System.out.println("(3)" + directory.get(userSelection).getClasses().get(2).getName() + " " + directory.get(userSelection).getClasses().get(2).getGrade() +  " " + directory.get(userSelection).getClasses().get(2).getPeriod());
+						userClassSelection = userInput.nextInt() - 1;
+					}
+				while(userClassSelection < 0 || userClassSelection > 2);
+				System.out.println("Enter the name of the new class.");
+				className = userStringput.nextLine();
+				directory.get(userSelection).getClasses().get(userClassSelection).setName(className);
+				System.out.println("Enter the starting grade of the new class.");
+				classGrade = userStringput.nextLine();
+				directory.get(userSelection).getClasses().get(userClassSelection).setGrade(classGrade);
+				System.out.println(directory.get(userSelection).getName() + " " + directory.get(userSelection).getClasses().get(userClassSelection).getName() + " " + directory.get(userSelection).getClasses().get(userClassSelection).getGrade() + " " + directory.get(userSelection).getClasses().get(userClassSelection).getPeriod());
 			}
 	}
