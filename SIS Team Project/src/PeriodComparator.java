@@ -8,11 +8,7 @@ public class PeriodComparator implements Comparator<Student>
 	@Override
 	public int compare(Student s1, Student s2)
 		{
-			if(s1.getClasses().get(0).getPeriod()>s2.getClasses().get(0).getPeriod())
-				{
-					return 1;
-				}
-			return -1;
+			return s1.getClasses().get(Runner.periodChoice-1).getName().compareTo(s2.getClasses().get(Runner.periodChoice-1).getName());
 		}
 
 	}
