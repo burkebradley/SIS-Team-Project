@@ -110,10 +110,53 @@ public class ChangeStudentGradeOrSchedule
 				while(userClassSelection < 0 || userClassSelection > 2);
 				System.out.println("Enter the name of the new class.");
 				className = userStringput.nextLine();
-				directory.get(userSelection).getClasses().get(userClassSelection).setName(className);
+//				directory.get(userSelection).getClasses().get(userClassSelection).setName(className);
 				System.out.println("Enter the starting grade of the new class.");
 				classGrade = userStringput.nextLine();
-				directory.get(userSelection).getClasses().get(userClassSelection).setGrade(classGrade);
-				System.out.println(directory.get(userSelection).getName() + " " + directory.get(userSelection).getClasses().get(userClassSelection).getName() + " " + directory.get(userSelection).getClasses().get(userClassSelection).getGrade() + " " + directory.get(userSelection).getClasses().get(userClassSelection).getPeriod());
+//				directory.get(userSelection).getClasses().get(userClassSelection).setGrade(classGrade);
+				
+				int userConfirmation;
+				int userIncorrectInfoSelection;
+				boolean infoCorrect = false;
+				do
+					{
+						System.out.println(directory.get(userSelection).getName() + " " + className + " " + classGrade + " " + directory.get(userSelection).getClasses().get(userClassSelection).getPeriod());
+						System.out.println();
+						System.out.println("Is this correct?");
+						System.out.println("(1) Yes");
+						System.out.println("(2) No");
+						userConfirmation = userInput.nextInt();
+						System.out.println();
+						if (userConfirmation == 2)
+							{
+								do
+									{
+										System.out.println("Which information is incorrect?");
+										System.out.println("(1) Class Name");
+										System.out.println("(2) Class Starting Grade");
+										userIncorrectInfoSelection = userInput.nextInt();
+										System.out.println();
+										if (userIncorrectInfoSelection == 1)
+											{
+												System.out.println("Enter the name of the new class.");
+												className = userStringput.nextLine();
+											}
+										else if (userIncorrectInfoSelection == 2)
+											{
+												System.out.println("Enter the starting grade of the new class.");
+												classGrade = userStringput.nextLine();
+											}
+										System.out.println();
+									}
+								while (userIncorrectInfoSelection != 1 && userIncorrectInfoSelection != 2);
+							}
+						else if (userConfirmation == 1)
+							{
+								directory.get(userSelection).getClasses().get(userClassSelection).setName(className);
+								directory.get(userSelection).getClasses().get(userClassSelection).setGrade(classGrade);
+								infoCorrect = true;
+							}
+					}
+				while (infoCorrect == false);
 			}
 	}
