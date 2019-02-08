@@ -2,33 +2,61 @@ import java.util.Scanner;
 
 public class MainMenu
 	{
-
+		static boolean run = true;
 		public static void main(String[] args)
 			{
-				System.out.println("Main Menu:");
-				System.out.println("1. Add or Delete a Student");
-				System.out.println("2. Change Student's grades/schedule");
-				System.out.println("3. Sort Students");
+				Scanner userNumber = new Scanner(System.in);				
+				String[] choice = new String[3];
+				choice[0] = "Add or delete a student";
+				choice[1] = "Change Student's Grades/Schedule";
+				choice[2] = "Sort Students";
 				
-				Scanner number = new Scanner(System.in);
-				int userChoice = number.nextInt();
+				System.out.println("Main Menu");
+				while(run)
+					{
+						for (int i = 0; i < choice.length; i++)
+				        	   {
+				        		   System.out.println((i+1)+ ". " + choice[i]);
+				        	   }
+						int userChoice = userNumber.nextInt();
+						
+						switch(userChoice)
+						{
+							case 1:
+								//Input Add Student method
+								break;
+								
+							case 2:
+								//Input Change Student's Grades/Schedule method
+								break;
+								
+							case 3:
+								//Input Sort Students method
+								break;
+						}
+						
+						System.out.println("Would you like to return to the main menu?");
+						
+						Scanner userInput = new Scanner(System.in);
+						String again = userInput.nextLine();
+						again.toLowerCase();
+						
+						if(again.equals("yes"))
+							{
+								run = true;
+							}
+						else
+							{
+								run = false;
+								System.out.println("Have a nice day!");
+							}
+						
+						
+						
+					}
 				
-				if(userChoice == 1)
-					{
-						//Add student method
-						
-						
-					}
-				else if(userChoice == 2)
-					{
-						//Add grades/schedule change method
-						
-					}
-				else if(userChoice == 3)
-					{
-						//Add sort students method
-						
-					}
+				
+				
 				
 
 			}
