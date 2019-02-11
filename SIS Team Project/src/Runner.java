@@ -1,5 +1,3 @@
-
-import java.net.StandardSocketOptions;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
@@ -14,8 +12,8 @@ public class Runner
 		
 		public static void main(String[] args)
 			{
-				ReadFile.readFile();
-				sortStudents();
+			    ReadFile.readFile();
+				MainMenu.printMainMenu();
 			}
 
 		
@@ -54,14 +52,16 @@ public class Runner
 		public static void displayStudents()
 		{
 		
-
+			int counter=1; 
+			
 			for(Student s: directory)
 				{
-					System.out.printf("%-16s ", s.getName());
+					System.out.printf(counter+") %-16s ", s.getName());
 					System.out.printf("%-2s %.2f  ", "GPA: ", s.getGpa());
 					System.out.printf("%-2s %-6s %10s %-2s", "P"+s.getClasses().get(0).getPeriod(), s.getClasses().get(0).getName(), "Grade: "+s.getClasses().get(0).getGrade(), " ");
 					System.out.printf("%-2s %-6s %10s %-2s", "P"+s.getClasses().get(1).getPeriod(), s.getClasses().get(1).getName(), "Grade: "+s.getClasses().get(1).getGrade(), " ");
 					System.out.printf("%-2s %-6s %10s\n", "P"+s.getClasses().get(2).getPeriod(),  s.getClasses().get(2).getName(), "Grade: "+s.getClasses().get(2).getGrade());
+					counter++;
 				}
 			
 		}
