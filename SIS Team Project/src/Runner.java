@@ -15,6 +15,7 @@ public class Runner
 		public static void main(String[] args)
 			{
 				ReadFile.readFile();
+
 				sortStudents();
 			}
 
@@ -67,6 +68,7 @@ public class Runner
 		}
 		
 	}
+
 
 
 
